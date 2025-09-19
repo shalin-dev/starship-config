@@ -1,0 +1,437 @@
+# Sexy Starship Config - ALL ICONS
+
+format = """
+$os\
+$username\
+$hostname\
+$shlvl\
+$container\
+$directory\
+$git_branch\
+$git_status\
+$git_metrics\
+$git_commit\
+$nodejs\
+${custom.nextjs}\
+$bun\
+$deno\
+$rust\
+$golang\
+$python\
+$ruby\
+$php\
+$java\
+$c\
+$kotlin\
+$haskell\
+$lua\
+$dart\
+$elm\
+$erlang\
+$julia\
+$nim\
+$scala\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$docker_context\
+$kubernetes\
+$aws\
+$gcloud\
+$azure\
+$package\
+$conda\
+$crystal\
+$dotnet\
+$elixir\
+$ocaml\
+$perl\
+$purescript\
+$memory_usage\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+${custom.music}\
+$line_break\
+${custom.quote}\
+$status\
+$character"""
+
+[os]
+disabled = false
+style = "bold blue"
+format = "[$symbol]($style) "
+
+[os.symbols]
+Arch = "󰣇"
+Ubuntu = "󰕈"
+Macos = ""
+Windows = "󰍲"
+Linux = "󰌽"
+Fedora = "󰣛"
+Debian = "󰣚"
+Alpine = ""
+Amazon = ""
+Android = ""
+CentOS = ""
+Redhat = "󱄛"
+Gentoo = "󰣨"
+Manjaro = ""
+Mint = "󰣭"
+openSUSE = ""
+Raspbian = "󰐿"
+
+[username]
+show_always = false
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style) "
+
+[hostname]
+ssh_only = true
+ssh_symbol = "󰢹 "
+style = "bold green"
+format = "[$ssh_symbol$hostname]($style) "
+
+[directory]
+style = "bold cyan"
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "🏠/"
+read_only = " 󰌾"
+read_only_style = "red"
+home_symbol = "🏠"
+use_logical_path = true
+
+[directory.substitutions]
+"~/Documents" = "🏠/󰈙 Documents"
+"~/Downloads" = "🏠/ Downloads"
+"~/Music" = "🏠/󰝚 Music"
+"~/Pictures" = "🏠/ Pictures"
+"~/Desktop" = "🏠/ Desktop"
+"~/Videos" = "🏠/ Videos"
+"~/Projects" = "🏠/󰲋 Projects"
+"~" = "🏠"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+style = "bold red"
+format = "([$all_status$ahead_behind]($style) )"
+conflicted = " "
+ahead = "󰶣${count} "
+behind = "󰶡${count} "
+diverged = "󰃻 "
+up_to_date = ""
+untracked = " ${count} "
+stashed = "󰏗 ${count} "
+modified = " ${count} "
+staged = " ${count} "
+renamed = "󰖷 ${count} "
+deleted = " ${count} "
+
+[git_metrics]
+disabled = false
+format = '([+$added]($added_style) [-$deleted]($deleted_style) )'
+added_style = "bold green"
+deleted_style = "bold red"
+
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+format = "[$symbol($version)]($style) "
+
+[rust]
+symbol = " "
+style = "bold red"
+format = "[$symbol($version)]($style) "
+
+[golang]
+symbol = " "
+style = "bold cyan"
+format = "[$symbol($version)]($style) "
+
+[python]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol($version)]($style) "
+
+[ruby]
+symbol = " "
+style = "bold red"
+format = "[$symbol($version)]($style) "
+
+[php]
+symbol = " "
+style = "bold purple"
+format = "[$symbol($version)]($style) "
+
+[java]
+symbol = " "
+style = "bold red"
+format = "[$symbol($version)]($style) "
+
+[c]
+symbol = " "
+style = "bold blue"
+format = "[$symbol($version)]($style) "
+
+[kotlin]
+symbol = " "
+style = "bold purple"
+format = "[$symbol($version)]($style) "
+
+[haskell]
+symbol = " "
+style = "bold purple"
+format = "[$symbol($version)]($style) "
+
+[lua]
+symbol = " "
+style = "bold blue"
+format = "[$symbol($version)]($style) "
+
+[dart]
+symbol = " "
+style = "bold blue"
+format = "[$symbol($version)]($style) "
+
+[elm]
+symbol = " "
+style = "bold cyan"
+format = "[$symbol($version)]($style) "
+
+[erlang]
+symbol = " "
+style = "bold red"
+format = "[$symbol($version)]($style) "
+
+[julia]
+symbol = " "
+style = "bold purple"
+format = "[$symbol($version)]($style) "
+
+[nim]
+symbol = "󰆥 "
+style = "bold yellow"
+format = "[$symbol($version)]($style) "
+
+[scala]
+symbol = " "
+style = "bold red"
+format = "[$symbol($version)]($style) "
+
+[swift]
+symbol = " "
+style = "bold 202"
+format = "[$symbol($version)]($style) "
+
+[terraform]
+symbol = "󱁢 "
+style = "bold purple"
+format = "[$symbol$workspace]($style) "
+
+[vagrant]
+symbol = " "
+style = "bold cyan"
+format = "[$symbol($version)]($style) "
+
+[zig]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol($version)]($style) "
+
+[docker_context]
+symbol = "󰡨 "
+style = "bold blue"
+format = "[$symbol$context]($style) "
+
+[kubernetes]
+symbol = "󱃾 "
+style = "bold blue"
+format = "[$symbol$context( \\($namespace\\))]($style) "
+disabled = false
+
+[aws]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol($profile)(\\($region\\))]($style) "
+
+[gcloud]
+symbol = " "
+style = "bold blue"
+format = "[$symbol$account(@$domain)(\\($project\\))]($style) "
+
+[azure]
+symbol = "󰠅 "
+style = "bold blue"
+format = "[$symbol($subscription)]($style) "
+
+[package]
+symbol = "󰏗 "
+style = "bold 208"
+format = "[$symbol($version)]($style) "
+
+[conda]
+symbol = " "
+style = "bold green"
+format = "[$symbol$environment]($style) "
+
+[crystal]
+symbol = " "
+style = "bold white"
+format = "[$symbol($version)]($style) "
+
+[dotnet]
+symbol = "󰪮 "
+style = "bold blue"
+format = "[$symbol($version)]($style) "
+
+[elixir]
+symbol = " "
+style = "bold purple"
+format = "[$symbol($version)]($style) "
+
+[ocaml]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol($version)]($style) "
+
+[perl]
+symbol = " "
+style = "bold blue"
+format = "[$symbol($version)]($style) "
+
+[purescript]
+symbol = " "
+style = "bold white"
+format = "[$symbol($version)]($style) "
+
+[cmd_duration]
+min_time = 500
+format = "[⏱ $duration]($style) "
+style = "bold yellow"
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰁽 "
+empty_symbol = "󰂎 "
+format = "[$symbol$percentage]($style) "
+disabled = true
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "dimmed white"
+format = "[󰥔 $time]($style) "
+
+[custom.music]
+command = """
+STATUS=$(playerctl status 2>/dev/null)
+if [ "$STATUS" = "Playing" ]; then
+  playerctl metadata --format '󰎆 {{ title }} - {{ artist }}' 2>/dev/null | head -c 50
+elif [ "$STATUS" = "Paused" ]; then
+  playerctl metadata --format '󰏤 {{ title }} - {{ artist }}' 2>/dev/null | head -c 50
+fi
+"""
+when = "playerctl status 2>/dev/null | grep -qE 'Playing|Paused'"
+style = "italic purple"
+format = "[$output]($style) "
+
+[custom.nextjs]
+command = "if [ -f next.config.js ] || [ -f next.config.ts ] || [ -f next.config.mjs ]; then echo '▲'; fi"
+when = "test -f package.json"
+style = "bold white"
+format = "[$output]($style) "
+
+[custom.quote]
+command = """
+QUOTES=(
+  "💭 Code is poetry written in logic"
+  "🚀 Deploying happiness, one commit at a time"
+  "☕ Powered by caffeine and syntax errors"
+  "🎯 Bugs are just features in disguise"
+  "🔥 This terminal is on fire today"
+  "✨ Making magic happen..."
+  "🎮 Level up your code game"
+  "🌟 You're crushing it!"
+  "🎨 Painting masterpieces in binary"
+  "🏗️ Building dreams, one function at a time"
+  "⚡ Supercharged and ready to code"
+  "🎪 Welcome to the code circus"
+  "🔮 Predicting bugs before they happen"
+  "🎯 Targeting perfection, accepting greatness"
+  "🍕 Debugging: The pizza is a lie"
+)
+echo "${QUOTES[$((RANDOM % ${#QUOTES[@]}))]}"
+"""
+when = "true"
+style = "italic dim yellow"
+format = "\n[$output]($style) "
+
+[memory_usage]
+disabled = false
+threshold = 75
+symbol = "󰍛 "
+style = "bold dimmed white"
+format = "[$symbol$ram_pct]($style) "
+
+[git_commit]
+commit_hash_length = 7
+style = "bold green"
+format = "[󰜘 $hash]($style) "
+disabled = false
+only_detached = false
+
+[jobs]
+symbol = "⚙"
+style = "bold blue"
+number_threshold = 1
+format = "[$symbol$number]($style) "
+
+[shlvl]
+disabled = false
+threshold = 2
+symbol = "↕ "
+style = "bold yellow"
+format = "[$symbol$shlvl]($style) "
+
+[status]
+disabled = false
+symbol = "✘ "
+success_symbol = ""
+style = "bold red"
+format = "[$symbol$status]($style) "
+
+[container]
+symbol = "📦 "
+style = "bold yellow"
+format = "[$symbol$name]($style) "
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+vimcmd_replace_one_symbol = "[❮](bold purple)"
+vimcmd_replace_symbol = "[❮](bold purple)"
+vimcmd_visual_symbol = "[❮](bold yellow)"
